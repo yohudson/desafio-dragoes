@@ -1,0 +1,28 @@
+<app-nav-bar></app-nav-bar>
+<div class="row">
+    <button type="button" class="novo" [routerLink]="'/novo-dragao'"><span class="material-icons">add</span>Novo dragão</button>
+</div>
+<div class="row">
+    <table>
+        <thead>
+            <tr>
+                <th>Data de criação</th>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dragao of dragoes">
+                <td>{{dragao.createdAt}}</td>
+                <td>{{dragao.name}}</td>
+                <td>{{dragao.type}}</td>
+                <td>
+                    <button type="button" class="visualizar" [routerLink]="'/detalhes/'+dragao.id">Detalhes</button>
+                    <button type="button" class="editar" [routerLink]="'/atualizar/'+dragao.id">Editar</button>
+                    <button type="button" class="excluir" (click)="apagarDragao(dragao.id)">Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

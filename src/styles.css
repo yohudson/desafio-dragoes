@@ -1,1 +1,145 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+* {
+    font-family: sans-serif;
+}
+
+button {
+    border-radius: 8px;
+    padding: 5px 15px;
+    box-shadow: none;
+    font-size: 12pt;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+}
+
+button:not(:last-of-type) {
+    margin-right: 10px;
+}
+
+button.voltar {
+    background-color: #ccc;
+    border: 1px solid #aaa;
+    color: #222;
+}
+
+button.salvar,
+button.novo {
+    background-color: #32af32;
+    border: 1px solid #228c22;
+    color: #fff;
+}
+
+button.atualizar {
+    background-color: #4444ff;
+    border: 1px solid #2222dd;
+    color: #fff;
+}
+
+button.sair,
+button.excluir {
+    background-color: #ff4040;
+    border: 1px solid #dd2020;
+    color: #fff;
+}
+
+button.editar {
+    background-color: #ffee22;
+    border: 1px solid #ddbb00;
+    color: #222;
+}
+
+button.visualizar {
+    background-color: #a925fb;
+    border: 1px solid #831eae;
+    color: #fff;
+}
+
+input {
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+div.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px
+}
+
+div.row label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+table {
+    width: 100%;
+}
+
+table,
+tr,
+th,
+td {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #222;
+    padding: 5px 10px
+}
+
+
+/* tabela responsiva */
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+        border: none
+    }
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr {
+        margin: 0 0 1rem 0;
+    }
+    tr:nth-child(odd) {
+        background: #ccc;
+    }
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+    td:before {
+        position: absolute;
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+    td:nth-of-type(1):before {
+        content: "Data de criação";
+        font-weight: bold;
+    }
+    td:nth-of-type(2):before {
+        content: "Nome";
+        font-weight: bold;
+    }
+    td:nth-of-type(3):before {
+        content: "Tipo";
+        font-weight: bold;
+    }
+    td:nth-of-type(4):before {
+        content: "";
+        font-weight: bold;
+    }
+}

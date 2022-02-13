@@ -1,0 +1,5 @@
+div.barra {
+    width: calc(100% - 20px);
+    display: flex;
+    justify-content: flex-end;
+}
