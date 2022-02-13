@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import Swal from 'sweetalert2';
 import { DragaoService } from '../services/dragoes-service.service';
+import { Global } from '../global';
 
 @Component({
   selector: 'app-add-dragao',
@@ -16,7 +17,8 @@ export class AddDragaoComponent implements OnInit {
   constructor(
     private router: Router,
     private dragaoService: DragaoService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public global: Global
   ) { }
 
   ngOnInit() {
@@ -28,6 +30,7 @@ export class AddDragaoComponent implements OnInit {
       this.dragaoExiste = true;
       this.obterDadosDragao(dragao)
     }
+    this.validaNavbar();
   }
 
   voltarPagina = () => {
@@ -88,6 +91,8 @@ export class AddDragaoComponent implements OnInit {
     })
   }
 
-
+  validaNavbar = () => {
+    this.global.nav = true;
+  }
 
 }

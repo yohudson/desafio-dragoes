@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
     Swal.showLoading();
     this.dragaoService.Get().subscribe((dragoes: Dragao[])=> {
       this.global.nav = true;
+      dragoes.sort((a:any,b:any) => a.name.localeCompare(b.name))
       this.dragoes = dragoes;
       for (let dragao of this.dragoes){
         this.validarDados(dragao).then(res => {
@@ -47,10 +48,10 @@ export class HomeComponent implements OnInit {
           dragao.criadoEm = dataCriacao+" "+horaCriacao;
         }).catch(err => {
           dragao.criadoEm = err
-        })        
+        })
       }
-      this.dadosVazios = false;
       Swal.close();
+      return
     },
     (err) => {this.dadosVazios = true}
     )

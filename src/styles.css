@@ -14,6 +14,11 @@ button {
     display: inline-flex;
     cursor: pointer;
     margin: 2.5px;
+    transition: ease-in-out .5s;
+}
+
+button*:hover {
+    transition: ease-in-out .5s;
 }
 
 button:not(:last-of-type) {
@@ -26,6 +31,11 @@ button.voltar {
     color: #222;
 }
 
+button.voltar:hover {
+    background-color: #aaa;
+    border: 1px solid #ccc;
+}
+
 button.salvar,
 button.novo,
 button.login {
@@ -34,10 +44,22 @@ button.login {
     color: #fff;
 }
 
+button.salvar:hover,
+button.novo:hover,
+button.login:hover {
+    background-color: #228c22;
+    border: 1px solid #32af32;
+}
+
 button.atualizar {
     background-color: #4444ff;
     border: 1px solid #2222dd;
     color: #fff;
+}
+
+button.atualizar:hover {
+    background-color: #2222dd;
+    border: 1px solid #4444ff;
 }
 
 button.sair,
@@ -47,10 +69,21 @@ button.excluir {
     color: #fff;
 }
 
+button.sair:hover,
+button.excluir:hover {
+    background-color: #dd2020;
+    border: 1px solid #ff4040;
+}
+
 button.editar {
     background-color: #ffee22;
     border: 1px solid #ddbb00;
     color: #222;
+}
+
+button.editar:hover {
+    background-color: #ddbb00;
+    border: 1px solid #ffee22;
 }
 
 button.visualizar {
@@ -59,10 +92,17 @@ button.visualizar {
     color: #fff;
 }
 
+button.visualizar:hover {
+    background-color: #831eae;
+    border: 1px solid #a925fb;
+    color: #fff;
+}
+
 input {
     padding: 10px;
     border-radius: 8px;
     width: 100%;
+    border: 1px solid #bbb;
 }
 
 div.row {
@@ -114,7 +154,7 @@ tr:nth-child(even) {
     background-color: #eee;
 }
 
-tr:hover td {
+tr:hover {
     background-color: #ccc;
 }
 
@@ -186,4 +226,34 @@ tr:hover td {
     td:only-child:before {
         content: '';
     }
+}
+
+.body {
+    border: 1px solid #ccc;
+    margin: 0 15px;
+    margin-top: -30px;
+    padding: 0 15px;
+    padding-top: 20px;
+    height: calc(100vh - 80px);
+    border-radius: 16px;
+    overflow: scroll;
+}
+
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

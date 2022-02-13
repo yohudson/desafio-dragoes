@@ -1,26 +1,28 @@
-<form>
-    <div class="add-form">
-        <div class="row">
-            <label>Nome do dragão</label>
-            <input type="text" name="nome" [(ngModel)]="dragao.name" />
+<div class="body">
+    <form>
+        <div class="add-form">
+            <div class="row">
+                <label>Nome do dragão</label>
+                <input type="text" name="nome" [(ngModel)]="dragao.name" />
+            </div>
+            <div class="row">
+                <label>Tipo de dragão</label>
+                <input type="text" name="tipo" [(ngModel)]="dragao.type" />
+            </div>
+            <div class="row botoes">
+                <button type="button" class="voltar" (click)="voltarPagina()">
+                    <span class="material-icons">arrow_back</span>
+                    <span class="legenda-botao">Voltar</span>
+                </button>
+                <button type="button" class="salvar" (click)="salvarDragao()" *ngIf="!dragaoExiste">
+                    <span class="material-icons">save</span>
+                    <span class="legenda-botao">Salvar</span>
+                </button>
+                <button type="button" class="atualizar" (click)="atualizarDragao()" *ngIf="dragaoExiste">
+                    <span class="material-icons">sync_alt</span>
+                    <span class="legenda-botao">Atualizar</span>
+                </button>
+            </div>
         </div>
-        <div class="row">
-            <label>Tipo de dragão</label>
-            <input type="text" name="tipo" [(ngModel)]="dragao.type" />
-        </div>
-        <div class="row">
-            <button type="button" class="voltar" (click)="voltarPagina()">
-                <span class="material-icons">arrow_back</span>
-                <span class="legenda-botao">Voltar</span>
-            </button>
-            <button type="button" class="salvar" (click)="salvarDragao()" *ngIf="!dragaoExiste">
-                <span class="material-icons">save</span>
-                <span class="legenda-botao">Salvar</span>
-            </button>
-            <button type="button" class="atualizar" (click)="atualizarDragao()" *ngIf="dragaoExiste">
-                <span class="material-icons">sync_alt</span>
-                <span class="legenda-botao">Atualizar</span>
-            </button>
-        </div>
-    </div>
-</form>
+    </form>
+</div>

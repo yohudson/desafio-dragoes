@@ -1,49 +1,51 @@
-<div class="row">
-    <button type="button" class="novo" [routerLink]="'/novo-dragao'">
-        <span class="material-icons">add</span>
+<div class="body">
+    <div class="row">
+        <button type="button" class="novo" [routerLink]="'/novo-dragao'">
+            <span class="material-icons">add</span>
         <span class="legenda-botao">Novo dragão</span>
     </button>
-</div>
-<div class="row">
-    <table>
-        <thead>
-            <tr>
-                <th>Data de criação</th>
-                <th>Nome</th>
-                <th>Tipo</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let dragao of dragoes">
-                <td>{{dragao.criadoEm}}</td>
-                <td>{{dragao.name}}</td>
-                <td>{{dragao.type}}</td>
-                <td>
-                    <button type="button" class="visualizar" (click)="modal.abrirDetalhes(dragao)" title="Detalhes">
+    </div>
+    <div class="row">
+        <table>
+            <thead>
+                <tr>
+                    <th>Data de criação</th>
+                    <th>Nome</th>
+                    <th>Tipo</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dragao of dragoes">
+                    <td>{{dragao.criadoEm}}</td>
+                    <td>{{dragao.name}}</td>
+                    <td>{{dragao.type}}</td>
+                    <td>
+                        <button type="button" class="visualizar" (click)="modal.abrirDetalhes(dragao)" title="Detalhes">
                         <span class="material-icons">search</span>
                     </button>
-                    <button type="button" class="editar" [routerLink]="'/atualizar/'+dragao.id" title="Editar">
+                        <button type="button" class="editar" [routerLink]="'/atualizar/'+dragao.id" title="Editar">
                         <span class="material-icons">edit</span>
                     </button>
-                    <button type="button" class="excluir" (click)="apagarDragao(dragao)" title="Excluir">
+                        <button type="button" class="excluir" (click)="apagarDragao(dragao)" title="Excluir">
                         <span class="material-icons">delete</span>
                     </button>
-                </td>
-            </tr>
-            <tr *ngIf="dragoes.length == 0">
-                <td colspan="4" class="alerta-falha">
-                    <p>Não há dados para exibir</p>
-                    <p class="atualizar-lista">
-                        <button class="visualizar" *ngIf="dadosVazios" (click)="getDragoes()">
+                    </td>
+                </tr>
+                <tr *ngIf="dragoes.length == 0">
+                    <td colspan="4" class="alerta-falha">
+                        <p>Não há dados para exibir</p>
+                        <p class="atualizar-lista">
+                            <button class="visualizar" *ngIf="dadosVazios" (click)="getDragoes()">
                             <span class="material-icons">refresh</span>
                             <span class="legenda-botao">Atualizar lista</span>
                         </button>
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-<app-modal-detalhes [dragao]="dadosDragao" #modal></app-modal-detalhes>
+    <app-modal-detalhes [dragao]="dadosDragao" #modal></app-modal-detalhes>
+</div>
