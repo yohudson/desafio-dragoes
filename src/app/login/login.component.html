@@ -1,15 +1,20 @@
-<form>
-    <div class="login-form">
-        <div class="login-row">
-            <label>Usuário</label>
-            <input type="text" name="usuario" [(ngModel)]="login.usuario" />
+<div class="login-screen">
+    <form>
+        <div class="login-form">
+            <div class="login-row">
+                <label>Usuário</label>
+                <input type="text" name="usuario" [(ngModel)]="login.usuario" />
+            </div>
+            <div class="login-row">
+                <label>Senha</label>
+                <input type="password" name="senha" [(ngModel)]="login.senha" />
+            </div>
+            <div>
+                <button type="button" class="login" (click)="realizarLogin()">
+                    <span class="material-icons">login</span>
+                    <span class="legenda-botao">Entrar</span>
+                </button>
+            </div>
         </div>
-        <div class="login-row">
-            <label>Senha</label>
-            <input type="password" name="senha" [(ngModel)]="login.senha" />
-        </div>
-        <div>
-            <button type="button" (click)="realizarLogin()">Entrar</button>
-        </div>
-    </div>
-</form>
+    </form>
+</div>

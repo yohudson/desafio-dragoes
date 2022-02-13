@@ -12,6 +12,7 @@ button {
     font-weight: bold;
     align-items: center;
     display: flex;
+    cursor: pointer;
 }
 
 button:not(:last-of-type) {
@@ -25,7 +26,8 @@ button.voltar {
 }
 
 button.salvar,
-button.novo {
+button.novo,
+button.login {
     background-color: #32af32;
     border: 1px solid #228c22;
     color: #fff;
@@ -92,6 +94,9 @@ td {
 
 @media only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px) {
+    .legenda-botao {
+        display: none;
+    }
     table,
     thead,
     tbody,
@@ -109,7 +114,7 @@ td {
     tr {
         margin: 0 0 1rem 0;
     }
-    tr:nth-child(odd) {
+    tr:nth-child(even) {
         background: #ccc;
     }
     td {
@@ -117,6 +122,10 @@ td {
         border-bottom: 1px solid #eee;
         position: relative;
         padding-left: 50%;
+    }
+    td:last-of-type {
+        padding-left: 0;
+        display: flex;
     }
     td:before {
         position: absolute;
@@ -141,5 +150,11 @@ td {
     td:nth-of-type(4):before {
         content: "";
         font-weight: bold;
+    }
+    td:only-child {
+        border-bottom: none
+    }
+    td:only-child:before {
+        content: '';
     }
 }

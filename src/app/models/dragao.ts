@@ -1,5 +1,5 @@
 export interface Dragao {
-  id: string,
+  id: number,
   createdAt: string,
   name: string,
   type: string

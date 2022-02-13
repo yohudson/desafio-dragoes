@@ -1,0 +1,14 @@
+.alerta-falha {
+    text-align: center;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+p {
+    width: 100%
+}
+
+p.atualizar-lista {
+    display: flex;
+    justify-content: center;
+}

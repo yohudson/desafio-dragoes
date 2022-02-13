@@ -12,7 +12,8 @@ import Swal from 'sweetalert2';
 export class HomeComponent implements OnInit {
 
   dragao = {} as Dragao;
-  dragoes: any = []
+  dragoes: any = [];
+  dadosVazios: boolean = false;
 
   constructor(
     public router: Router,
@@ -32,16 +33,36 @@ export class HomeComponent implements OnInit {
     Swal.showLoading();
     this.dragaoService.Get().subscribe((dragoes: Dragao[])=> {
       this.dragoes = dragoes;
+      this.dadosVazios = false;
       Swal.close();
-    })
+    },
+    (err) => {this.dadosVazios = true}
+    )
   }
 
-  apagarDragao = (id: any) => {
-    if (window.confirm('Tem certeza que deseja apagar este dragão? Esta ação é irreversível!')){
-      this.dragaoService.Delete(id).subscribe(() => {
-        this.getDragoes();
-      })
-    }
+  apagarDragao = (dragao: any) => {
+    Swal.fire({
+      title:'Atenção',
+      icon:'warning',
+      text:'Tem certeza que deseja apagar este dragão? Esta ação é irreversível!',
+      confirmButtonText: 'Sim',
+      cancelButtonText: 'Cancelar',
+      showCancelButton: true,
+      showCloseButton: true
+    }).then(res => {
+      if (res.isConfirmed){
+        Swal.showLoading();
+        this.dragaoService.Delete(dragao).subscribe(() => {
+          this.getDragoes();
+          console.info('aqui')
+          Swal.close();
+        })
+      }
+      else{
+        console.info('aqui')
+        Swal.close();
+      }
+    })
   }
 
 }

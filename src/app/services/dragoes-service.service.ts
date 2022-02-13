@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Dragao } from '../models/dragao'
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class DragaoService {
   Get(): Observable<Dragao[]> {
     return this.httpClient.get<Dragao[]>(this.url)
       .pipe(
-        retry(2),
+        //retry(2),
         catchError(this.handleError))
   }
 
@@ -61,10 +62,13 @@ export class DragaoService {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       errorMessage = error.error.message;
+      Swal.close()
     } else {
       errorMessage = `Código do erro: ${error.status}, ` + `menssagem: ${error.message}`;
+      Swal.close()
     }
     console.log(errorMessage);
+    Swal.close()
     return throwError(errorMessage);
   };
 

@@ -38,13 +38,8 @@ export class AddDragaoComponent implements OnInit {
     Swal.showLoading();
     this.validaDragao().then(res => {
       var data = new Date();
-      var obj = {
-        name: this.dragao.name,
-        type: this.dragao.type,
-        createdAt: data.toISOString(),
-        id: ''
-      }
-      this.dragaoService.Post(obj).subscribe(() => {
+      this.dragao.createdAt = data.toISOString();
+      this.dragaoService.Post(this.dragao).subscribe(() => {
         this.dragao = {};
         Swal.close()
         Swal.fire('Sucesso', 'Dragão salvo com sucesso', 'success');

@@ -9,9 +9,18 @@
             <input type="text" name="tipo" [(ngModel)]="dragao.type" />
         </div>
         <div class="row">
-            <button type="button" class="voltar" (click)="voltarPagina()"><span class="material-icons">arrow_back</span>Voltar</button>
-            <button type="button" class="salvar" (click)="salvarDragao()" *ngIf="!dragaoExiste"><span class="material-icons">save</span>Salvar</button>
-            <button type="button" class="atualizar" (click)="atualizarDragao()" *ngIf="dragaoExiste"><span class="material-icons">sync_alt</span>Atualizar</button>
+            <button type="button" class="voltar" (click)="voltarPagina()">
+                <span class="material-icons">arrow_back</span>
+                <span class="legenda-botao">Voltar</span>
+            </button>
+            <button type="button" class="salvar" (click)="salvarDragao()" *ngIf="!dragaoExiste">
+                <span class="material-icons">save</span>
+                <span class="legenda-botao">Salvar</span>
+            </button>
+            <button type="button" class="atualizar" (click)="atualizarDragao()" *ngIf="dragaoExiste">
+                <span class="material-icons">sync_alt</span>
+                <span class="legenda-botao">Atualizar</span>
+            </button>
         </div>
     </div>
 </form>
