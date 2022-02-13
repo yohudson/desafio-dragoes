@@ -13,6 +13,7 @@ button {
     align-items: center;
     display: flex;
     cursor: pointer;
+    margin: 2.5px;
 }
 
 button:not(:last-of-type) {
@@ -87,6 +88,19 @@ td {
     border-spacing: 0;
     border: 1px solid #222;
     padding: 5px 10px
+}
+
+td,
+th {
+    width: fit-content;
+}
+
+td:last-of-type,
+th:last-of-type {
+    display: flex;
+    border: none;
+    width: 1%;
+    padding: 0;
 }
 
 

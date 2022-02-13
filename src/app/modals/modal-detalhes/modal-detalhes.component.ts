@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-modal-detalhes',
@@ -15,18 +16,21 @@ export class ModalDetalhesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.abrirDetalhes(this.dragao)
   }
 
   abrirDetalhes = (dragao:any) => {
+    Swal.showLoading()
     this.mostrar = true;
     this.detalhes = dragao;
+    Swal.close()
   }
-
+  
   fecharModal = () => {
+    Swal.showLoading()
     this.dragao = {};
     this.detalhes = {}
     this.mostrar = false;
+    Swal.close()
   }
 
 }

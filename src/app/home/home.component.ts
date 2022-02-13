@@ -35,6 +35,17 @@ export class HomeComponent implements OnInit {
     Swal.showLoading();
     this.dragaoService.Get().subscribe((dragoes: Dragao[])=> {
       this.dragoes = dragoes;
+      for (let dragao of this.dragoes){
+        this.validarDados(dragao).then(res => {
+          var dataCriacao = dragao.createdAt.split("T")[0];
+          var horaCriacao = dragao.createdAt.split("T")[1];
+          dataCriacao = dataCriacao.split("-")[2]+"/"+dataCriacao.split("-")[1]+"/"+dataCriacao.split("-")[0];
+          horaCriacao = horaCriacao.split(":")[0]+":"+horaCriacao.split(":")[1];
+          dragao.criadoEm = dataCriacao+" "+horaCriacao;
+        }).catch(err => {
+          dragao.criadoEm = err
+        })        
+      }
       this.dadosVazios = false;
       Swal.close();
     },
@@ -61,7 +72,6 @@ export class HomeComponent implements OnInit {
         })
       }
       else{
-        console.info('aqui')
         Swal.close();
       }
     })
@@ -70,6 +80,18 @@ export class HomeComponent implements OnInit {
   verDetalhes = (data: any) => {
     this.dadosDragao = data;
     console.log(this.dadosDragao)
+  }
+
+  validarDados = (data: any) => {
+    return new Promise((res, rej) => {
+      var i = data.createdAt.split('T').length;
+      if (i > 1){
+        res (data)
+      }
+      else {
+        rej (data.createdAt)
+      }
+    })
   }
 
 
