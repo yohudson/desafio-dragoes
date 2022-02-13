@@ -1,15 +1,24 @@
 <div class="login-screen">
     <form>
         <div class="login-form">
+            <div class="row">
+                <h3>Desafio de dragões</h3>
+            </div>
             <div class="login-row">
                 <label>Usuário</label>
                 <input type="text" name="usuario" [(ngModel)]="login.usuario" />
             </div>
             <div class="login-row">
                 <label>Senha</label>
-                <input type="password" name="senha" [(ngModel)]="login.senha" />
+                <div class="ver-senha">
+                    <input type="password" name="senha" [(ngModel)]="login.senha" id="senha" #senha />
+                    <button class="visualizar mostrar-senha" (click)="verSenha(senha)">
+                        <span class="material-icons" *ngIf="senha.type === 'password'">visibility</span>
+                        <span class="material-icons" *ngIf="senha.type === 'text'">visibility_off</span>
+                    </button>
+                </div>
             </div>
-            <div>
+            <div class="row">
                 <button type="button" class="login" (click)="realizarLogin()">
                     <span class="material-icons">login</span>
                     <span class="legenda-botao">Entrar</span>

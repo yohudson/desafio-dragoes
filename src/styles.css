@@ -11,7 +11,7 @@ button {
     font-size: 12pt;
     font-weight: bold;
     align-items: center;
-    display: flex;
+    display: inline-flex;
     cursor: pointer;
     margin: 2.5px;
 }
@@ -97,10 +97,25 @@ th {
 
 td:last-of-type,
 th:last-of-type {
-    display: flex;
+    white-space: nowrap;
     border: none;
     width: 1%;
     padding: 0;
+}
+
+th {
+    background-color: #0088ff;
+    font-size: 14pt;
+    text-align: left;
+    padding: 10px 15px;
+}
+
+tr:nth-child(even) {
+    background-color: #eee;
+}
+
+tr:hover td {
+    background-color: #ccc;
 }
 
 

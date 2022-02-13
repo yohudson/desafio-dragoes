@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 import { DragaoService } from '../services/dragoes-service.service';
 import { Dragao } from '../models/dragao'
 import Swal from 'sweetalert2';
-import { ModalDetalhesComponent } from '../modals/modal-detalhes/modal-detalhes.component';
+import { Global } from '../global';
 
 @Component({
   selector: 'app-home',
@@ -16,10 +16,12 @@ export class HomeComponent implements OnInit {
   dragoes: any = [];
   dadosVazios: boolean = false;
   dadosDragao: any = {};
+  nav: boolean = true
 
   constructor(
     public router: Router,
-    private dragaoService: DragaoService
+    private dragaoService: DragaoService,
+    public global: Global
   ) { }
 
   ngOnInit() {
@@ -30,10 +32,11 @@ export class HomeComponent implements OnInit {
       this.getDragoes()
     }
   }
-
+  
   getDragoes = () => {
     Swal.showLoading();
     this.dragaoService.Get().subscribe((dragoes: Dragao[])=> {
+      this.global.nav = true;
       this.dragoes = dragoes;
       for (let dragao of this.dragoes){
         this.validarDados(dragao).then(res => {
@@ -93,6 +96,5 @@ export class HomeComponent implements OnInit {
       }
     })
   }
-
 
 }

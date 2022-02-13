@@ -15,11 +15,10 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.validarUsuario()
+    this.validarUsuario();
   }
 
   validarUsuario = () => {
-    console.log('entrou aqui')
     if (localStorage.getItem('login')){
       this.router.navigate(['/home']);
     }
@@ -41,6 +40,10 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('login', this.login);
       this.router.navigate(['/home']);
     }
+  }
+  
+  verSenha = (senha: any) => {
+    senha.type = senha.type === 'text' ? 'password' : 'text'
   }
 
 }

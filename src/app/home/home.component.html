@@ -1,4 +1,3 @@
-<app-nav-bar></app-nav-bar>
 <div class="row">
     <button type="button" class="novo" [routerLink]="'/novo-dragao'">
         <span class="material-icons">add</span>
@@ -21,17 +20,14 @@
                 <td>{{dragao.name}}</td>
                 <td>{{dragao.type}}</td>
                 <td>
-                    <button type="button" class="visualizar" (click)="modal.abrirDetalhes(dragao)">
+                    <button type="button" class="visualizar" (click)="modal.abrirDetalhes(dragao)" title="Detalhes">
                         <span class="material-icons">search</span>
-                        <span class="legenda-botao">Detalhes</span>
                     </button>
-                    <button type="button" class="editar" [routerLink]="'/atualizar/'+dragao.id">
+                    <button type="button" class="editar" [routerLink]="'/atualizar/'+dragao.id" title="Editar">
                         <span class="material-icons">edit</span>
-                        <span class="legenda-botao">Editar</span>
                     </button>
-                    <button type="button" class="excluir" (click)="apagarDragao(dragao)">
+                    <button type="button" class="excluir" (click)="apagarDragao(dragao)" title="Excluir">
                         <span class="material-icons">delete</span>
-                        <span class="legenda-botao">Excluir</span>
                     </button>
                 </td>
             </tr>

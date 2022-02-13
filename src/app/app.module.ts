@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { Global } from './global'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,7 +30,7 @@ import { ModalDetalhesComponent } from './modals/modal-detalhes/modal-detalhes.c
     HttpClientModule,
     SweetAlert2Module.forRoot()
   ],
-  providers: [DragaoService],
+  providers: [DragaoService,Global],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
