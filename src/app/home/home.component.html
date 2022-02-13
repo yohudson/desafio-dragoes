@@ -21,7 +21,7 @@
                 <td>{{dragao.name}}</td>
                 <td>{{dragao.type}}</td>
                 <td>
-                    <button type="button" class="visualizar" [routerLink]="'/detalhes/'+dragao.id">
+                    <button type="button" class="visualizar" (click)="modal.abrirDetalhes(dragao)">
                         <span class="material-icons">search</span>
                         <span class="legenda-botao">Detalhes</span>
                     </button>
@@ -49,3 +49,5 @@
         </tbody>
     </table>
 </div>
+
+<app-modal-detalhes [dragao]="dadosDragao" #modal></app-modal-detalhes>

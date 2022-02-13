@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { DragaoService } from '../services/dragoes-service.service';
 import { Dragao } from '../models/dragao'
 import Swal from 'sweetalert2';
+import { ModalDetalhesComponent } from '../modals/modal-detalhes/modal-detalhes.component';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,7 @@ export class HomeComponent implements OnInit {
   dragao = {} as Dragao;
   dragoes: any = [];
   dadosVazios: boolean = false;
+  dadosDragao: any = {};
 
   constructor(
     public router: Router,
@@ -64,5 +66,11 @@ export class HomeComponent implements OnInit {
       }
     })
   }
+
+  verDetalhes = (data: any) => {
+    this.dadosDragao = data;
+    console.log(this.dadosDragao)
+  }
+
 
 }

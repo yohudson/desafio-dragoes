@@ -29,7 +29,7 @@ export class DragaoService {
   Post(dragao: Dragao): Observable<Dragao> {
     return this.httpClient.post<Dragao>(this.url, JSON.stringify(dragao), this.httpOptions)
       .pipe(
-        retry(2),
+        //retry(2),
         catchError(this.handleError)
       )
   }
@@ -37,7 +37,7 @@ export class DragaoService {
   GetById(id: number): Observable<Dragao> {
     return this.httpClient.get<Dragao>(this.url + '/' + id)
       .pipe(
-        retry(2),
+        //retry(2),
         catchError(this.handleError)
       )
   }
@@ -45,7 +45,7 @@ export class DragaoService {
   Put(dragao: Dragao): Observable<Dragao> {
     return this.httpClient.put<Dragao>(this.url + '/' + dragao.id, JSON.stringify(dragao), this.httpOptions)
       .pipe(
-        retry(1),
+        //retry(1),
         catchError(this.handleError)
       )
   }
@@ -53,7 +53,7 @@ export class DragaoService {
   Delete(dragao: Dragao) {
     return this.httpClient.delete<Dragao>(this.url + '/' + dragao.id, this.httpOptions)
       .pipe(
-        retry(1),
+        //retry(1),
         catchError(this.handleError)
       )
   }

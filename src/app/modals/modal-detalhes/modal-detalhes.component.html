@@ -1,0 +1,23 @@
+<div id="detalhes" class="modal" *ngIf="mostrar">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close" (click)="fecharModal()">&times;</span>
+            <h2>Modal Header</h2>
+        </div>
+        <div class="modal-body">
+            <div *ngIf="detalhes">
+                <div class="row">
+                    <label><b>Nome do dragao</b></label>
+                    <label>{{detalhes.name}}</label>
+                </div>
+                <div class="row">
+                    <label><b>Nome do dragao</b></label>
+                    <label>{{detalhes.type}}</label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <h3>Modal Footer</h3>
+        </div>
+    </div>
+</div>

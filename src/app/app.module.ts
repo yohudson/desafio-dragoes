@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { AddDragaoComponent } from './add-dragao/add-dragao.component';
 import { NavBarComponent } from './componentes/nav-bar/nav-bar.component';
 import { DragaoService } from './services/dragoes-service.service';
+import { ModalDetalhesComponent } from './modals/modal-detalhes/modal-detalhes.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DragaoService } from './services/dragoes-service.service';
     LoginComponent,
     HomeComponent,
     AddDragaoComponent,
-    NavBarComponent
+    NavBarComponent,
+    ModalDetalhesComponent
   ],
   imports: [
     BrowserModule,
