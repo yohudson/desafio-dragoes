@@ -69,7 +69,6 @@ export class AddDragaoComponent implements OnInit {
   obterDadosDragao = (id: any) => {
     Swal.showLoading()
     this.dragaoService.GetById(id).subscribe(res => {
-      console.log(res)
       this.dragao = res;
       Swal.close()
     })
@@ -87,7 +86,11 @@ export class AddDragaoComponent implements OnInit {
     this.dragaoService.Put(obj).subscribe(() => {
       this.dragao = {}
       Swal.close()
-      Swal.fire('Sucesso', 'Dragão atualizado com sucesso', 'success');
+      Swal.fire('Sucesso', 'Dragão atualizado com sucesso', 'success').then(res => {
+        if (res.isConfirmed){
+          this.router.navigate(['/']);
+        }
+      });
     })
   }
 
