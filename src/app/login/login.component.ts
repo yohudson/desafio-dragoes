@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   }
 
   validarUsuario = () => {
-    if (localStorage.getItem('login')){
+    if (localStorage.getItem('loginDesafioDragoes')){
       this.router.navigate(['/home']);
     }
     else {
@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
       return;
     }
     else {
-      localStorage.setItem('login', this.login);
+      localStorage.setItem('loginDesafioDragoes', this.login);
       this.router.navigate(['/home']);
     }
   }

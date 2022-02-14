@@ -22,7 +22,7 @@ export class AddDragaoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if(!localStorage.getItem('login')){
+    if(!localStorage.getItem('loginDesafioDragoes')){
       this.router.navigate(['/login']);
     }
     var dragao = this.route.snapshot.paramMap.get("id");

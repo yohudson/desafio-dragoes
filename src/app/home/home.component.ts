@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if(!localStorage.getItem('login')){
+    if(!localStorage.getItem('loginDesafioDragoes')){
       this.router.navigate(['/login']);
     }
     else{
