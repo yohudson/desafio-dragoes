@@ -1,27 +1,15 @@
-# DesafioDragoes
+# Desafio de dragões
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
+Este projeto foi gerado com o [Angular CLI](https://github.com/angular/angular-cli) versão 13.2.3.
 
-## Development server
+## Preparação do ambiente
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Ao baixar a pasta de arquivos, é importante executar o comando `npm install` para que todas as dependências do projeto sejam instaladas no ambiente local.
 
-## Code scaffolding
+## Servidor de desenvolvimento
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Execute o comando `ng serve -o` para abrir o servidor de desenvolvimento. Automaticamente será aberto o endereço `http://localhost:4200/`. A aplicação será recarregada automaticamente se alguma alteração for feita e salva nos códigos fonte.
 
-## Build
+## Usuário e senha para acesso
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+O login de acesso é `usuario` e a senha de acesso é `123`.

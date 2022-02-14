@@ -9,6 +9,10 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit {
   login: any = {};
+  usuario = {
+    nome: 'usuario',
+    senha: '123'
+  }
 
   constructor(
     public router: Router,
@@ -34,6 +38,14 @@ export class LoginComponent implements OnInit {
     }
     if (!this.login.senha){
       Swal.fire('Atenção', 'É preciso informar uma senha', 'warning');
+      return;
+    }
+    if (this.login.usuario != this.usuario.nome){
+      Swal.fire('Erro', 'O usuário não existe', 'error');
+      return;
+    }
+    if (this.login.senha != this.usuario.senha){
+      Swal.fire('Erro', 'A senha está incorreta', 'error');
       return;
     }
     else {
